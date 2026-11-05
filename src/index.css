@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-scnavy: #0D2238;
+    --color-scblue: #1E3A5F;
+    --color-scorange: #EA6A15;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #F1F5F9;
+    color: #0F172A;
+    margin: 0;
+  }
+
+  .font-mono,
+  .tabular-nums {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.bg-scnavy {
+  background-color: #0D2238;
+}
+.bg-scblue {
+  background-color: #1E3A5F;
+}
+.bg-scorange {
+  background-color: #EA6A15;
+}
+.text-scnavy {
+  color: #0D2238;
+}
+.text-scblue {
+  color: #1E3A5F;
+}
+.text-scorange {
+  color: #EA6A15;
+}
+.border-scnavy {
+  border-color: #0D2238;
+}
+.border-scorange {
+  border-color: #EA6A15;
+}
+
+.sc-scroll::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.sc-scroll::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+.a4-distinct-sheet {
+  max-width: 210mm;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #FFFFFF;
+  box-sizing: border-box;
+}
+
+.print-single-line th,
+.print-single-line td {
+  white-space: nowrap !important;
+}
+
+.sc-fit-table {
+  width: 100% !important;
+  table-layout: fixed !important;
+  border-collapse: collapse !important;
+}
+.sc-fit-table th,
+.sc-fit-table td {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 5mm;
+  }
+  body * {
+    visibility: hidden !important;
+  }
+  #printArea,
+  #printArea * {
+    visibility: visible !important;
+  }
+  #printArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #FFFFFF;
+    display: block !important;
+  }
+  .page-break {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+  .a4-distinct-sheet {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 284mm !important;
+    max-height: 284mm !important;
+    padding: 8px 10px !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

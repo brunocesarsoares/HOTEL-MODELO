@@ -1,0 +1,6 @@
+{
+  "name": "SC SOARES LTDA · Cabral 2.0 — Sistema Unificado",
+  "description": "Sistema unificado de gestão de engenharia, ordens de serviço, planilha de medição semanal, cronograma de pagamentos, memória de aferição de plantas, ordens de compra e webhook Timemark.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
